@@ -1,0 +1,64 @@
+<div style="margin-left: 20px;">
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <hr>
+    <div>
+        <p>
+            {{description}}
+        </p>
+    </div>
+    <div>
+        {{#with history}}
+        <p>It was founded in <em>{{year}}</em> by <em>{{founder}}.</em></p>
+        {{/with}}
+    </div>
+    <hr>
+    <br>
+    <div>
+        {{> card text="Types" data=types }}
+    </div>
+    <br>
+    <hr>
+    <div style="margin-left: 20px;">
+        {{#with syntax}}
+        <div>
+            <h3>JavaScript syntax</h3>
+        </div>
+        {{> accordion-item text="Variables" data=variables }}
+        {{> accordion-item text="Functions" data=functions }}
+        {{> accordion-item text="Conditionals" data=conditionals }}
+        {{> accordion-item text="Loops" data=loops }}
+        {{> accordion-item text="Classes" data=classes }}
+        {{/with}}
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="margin-left: 20px;">
+        {{> card text="JavaScript features" data=features }}
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="margin-left: 20px;">
+        {{> card text="Libraries" data=libraries }}
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="margin-left: 20px;">
+        {{> card text="Tools" data=tools }}
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div style="margin-left: 20px;">
+        <h3>Community</h3>
+        {{#each community}}
+        <ul class="list-group">
+            <li class="list-group-item">name: {{name}}, type: {{type}}</li>
+        </ul>
+        {{/each}}
+    </div>
+</div>
