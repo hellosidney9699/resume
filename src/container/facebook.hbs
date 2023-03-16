@@ -1,0 +1,43 @@
+<body>
+    <h1>{{name}} Users</h1>
+    <ul>
+        {{#each users}}
+        <li>
+            {{> user id=id name=name gender=gender age=age}}
+            <h3>Friends:</h3>
+            <ul>
+                {{#each friends}}
+                <li>
+                    {{> user id=id name=name gender=gender age=age}}
+                    {{#if mutual_friends}}
+                    <h4>Mutual Friends:</h4>
+                    <ul>
+                        {{#each mutual_friends}}
+                        <li>
+                            {{> user id=id name=name gender=gender age=age}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            <h3>Groups:</h3>
+            <ul>
+                {{#each groups}}
+                <li>
+                    {{> user id=id name=name gender=gender age=age}}
+                    <ul>
+                        {{#each members}}
+                        <li>
+                            {{> user id=id name=name gender=gender age=age}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</body>
