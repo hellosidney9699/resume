@@ -1,0 +1,206 @@
+<div style="margin-left: 20px;">
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <hr>
+    <div>
+        <p><em>{{description}}</em></p>
+        <p>Price: <strong>{{price}}$</strong></p>
+        <p>Category: {{category}}</p>
+    </div>
+    <hr>
+    <div>
+        {{#with features}}
+        <div>
+            <h2>Features</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
+            <style>
+                .card {
+                    height: 340px;
+                    width: 230px;
+                }
+            </style>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Processor</h5>
+                        <div class="card-text">
+                            {{#with processor}}
+                            <ul>
+                                <li>brand: {{brand}}</li>
+                                <li>model: {{model}}</li>
+                                <li>speed: {{speed}}</li>
+                                <li>cores: {{cores}}</li>
+                                <li>cache: {{cache}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Memory</h5>
+                        <div class="card-text">
+                            {{#with memory}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>size: {{size}}</li>
+                                <li>speed: {{speed}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Storage</h5>
+                        <div class="card-text">
+                            {{#with storage}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>size: {{size}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Display</h5>
+                        <div class="card-text">
+                            {{#with display}}
+                            <ul>
+                                <li>size: {{size}}</li>
+                                <li>resolution: {{resolution}}</li>
+                                <li>technology: {{technology}}</li>
+                                <li>color space: {{color_space}}</li>
+                                <li>brightness: {{brightness}}</li>
+                                <li>refresh rate: {{refresh_rate}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Graphics</h5>
+                        <div class="card-text">
+                            {{#with graphics}}
+                            <ul>
+                                <li>brand: {{brand}}</li>
+                                <li>model: {{model}}</li>
+                                <li>memory: {{memory}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ports</h5>
+                        <div class="card-text">
+                            {{#each ports}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>count: {{count}}</li>
+                                {{#if features}}
+                                <li>features:
+                                    {{#each features}}
+                                    <ul>
+                                        <li>{{this}}</li>
+                                    </ul>
+                                    {{/each}}
+                                </li>
+                                {{/if}}
+                            </ul>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Battery</h5>
+                        <div class="card-text">
+                            {{#with battery}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>capacity: {{capacity}}</li>
+                                <li>life: {{life}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weight</h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>{{weight}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Dimensions</h5>
+                        <div class="card-text">
+                            {{#with dimensions}}
+                            <ul>
+                                <li>height: {{height}}</li>
+                                <li>width: {{width}}</li>
+                                <li>depth: {{depth}}</li>
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Operating system</h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>{{operating_system}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Accessories</h5>
+                        <div class="card-text">
+                            {{#each accessories}}
+                            <ul>
+                                <li>{{name}}<br>
+                                    price: {{price}}$</li>
+                            </ul>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+</div>
