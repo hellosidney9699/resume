@@ -1523,6 +1523,7 @@ router.get('/shophome', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
     layout: 'shop',
+
     navigation: {
       links: [
         {
@@ -1689,10 +1690,12 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Register Now',
           link: 'https://www.youtube.com/',
+          type: 'registration',
         },
         {
           text: 'Buy Subscription',
           link: 'https://www.youtube.com/',
+          type: 'subscription',
         },
       ],
     },
@@ -1704,6 +1707,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
+          type: 'show-more',
         },
       ],
     },
