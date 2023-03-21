@@ -1,0 +1,141 @@
+<section>
+    <nav class="nav mt-4 mb-4">
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            {{#if url}}
+            <li class="breadcrumb-item">
+                <a href="{{url}}" class="text-decoration-none">{{name}}</a>
+                {{else}}
+            <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+            {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+    </nav>
+</section>
+
+<section>
+    <div class="col-12">
+        <div class="row">
+            {{#with productData}}
+            <div class="col-6 mb-4">
+                <img src="{{img}}" alt="productImage">
+            </div>
+
+            <div class="col-5 ms-5">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                {{#each item.head}}
+                                <th>{{this}}</th>
+                                {{/each}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each item.body}}
+                            <tr>
+                                {{#each this}}
+                                <td>{{this}}</td>
+                                {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="col-12 mb-4">
+        <div class="row">
+            {{#with info}}
+            <div class="card col-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{about}}</p>
+                    <h3>Price: {{price}}</h3>
+                    {{#each category}}
+                    {{#if isHot}}
+                    <div class="badge rounded-pill text-bg-warning text-light text-uppercase">{{name}}</div>
+                    {{/if}}
+                    {{#if isNew}}
+                    <div class="badge rounded-pill text-bg-primary">{{name}}</div>
+                    {{/if}}
+                    {{#if isBonus}}
+                    <div class="badge rounded-pill text-light text-bg-info">{{name}}</div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+
+            <div class="col-5 ms-5">
+                {{#with param}}
+                <div class="card">
+                    <div class="card-header">{{title}}</div>
+                    <ul class="list-group list-group-flush">
+                        {{#each list}}
+                        <li class="list-group-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/with}}
+
+
+                <div class="col-12 mt-3">
+                    {{#with alert}}
+                    <div class="alert alert-danger">
+                        {{#if isError}}
+                        <p>{{text}}</p>
+                        {{/if}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="col-12 mb-5">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    {{#each actionList}}
+                    {{#if isWarning}}
+                    <button type="button" class="btn btn-warning text-light d-inline mx-1">{{name}}</button>
+                    {{/if}}
+
+                    {{#if isError}}
+                    <button type="button" class="btn btn-outline-danger d-inline mx-1">{{name}}</button>
+                    {{/if}}
+
+                    {{#if isSuccess}}
+                    <button type="button" class="btn btn-success d-inline mx-1">{{name}}</button>
+                    {{/if}}
+
+                    {{#if isGood}}
+                    <button type="button" class="btn btn-outline-success d-inline mx-1">{{name}}</button>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<hr class="my-5">
+
+<section>
+    {{#with goodsOtherBlock}}
+    <h3 class="text-center">{{title}}</h3>
+    {{> shopcard}}
+    {{/with}}
+</section>
+
+<hr class="my-5">
