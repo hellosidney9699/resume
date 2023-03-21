@@ -1,0 +1,22 @@
+{{#with navigation}}
+<div class="card p-3">
+    <div class="row">
+        <div class="col-6 display-6">
+            <strong>{{Logo}}</strong>
+        </div>
+
+        <div class="col-6 pt-1">
+            <ul class="nav justify-content-end">
+                {{#each links}}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{href}}">{{text}}</a>
+                </li>
+                {{/each}}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/with}}
