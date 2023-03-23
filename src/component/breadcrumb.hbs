@@ -1,0 +1,13 @@
+<nav class="nav mt-4 mb-4">
+    <ol class="breadcrumb">
+        {{#each breadcrumb}}
+        {{#if url}}
+        <li class="breadcrumb-item">
+            <a href="{{url}}" class="text-decoration-none">{{name}}</a>
+            {{else}}
+        <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+        {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+</nav>
