@@ -1,0 +1,70 @@
+<div class="col-12">
+    {{#each reviewList}}
+    <div class="card mt-3 mb-5">
+        <div class="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        {{#with title}}
+                        <div class="col-10">
+                            <h5>{{userName}}</h5>
+                            <span>{{caption}}</span>
+                        </div>
+                        <div class="col-2 text-end mt-3">
+                            <p>{{date}}</p>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{#with reviewBody}}
+                    <p>{{seller.title}}: {{seller.value}}</p>
+                    <p class="my-3">{{rating.title}}: {{rating.value}}</p>
+                    <div>
+                        {{#each text}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    </div>
+                    <div>
+                        <strong>{{advantages.title}}:</strong>
+                        <p>{{advantages.text}}</p>
+                    </div>
+                    <div>
+                        <strong>{{disadvantages.title}}:</strong>
+                        <p>{{disadvantages.text}}</p>
+                    </div>
+                    <div>
+                        {{#each images}}
+                        <img src="https://picsum.photos/110/100" alt="image">
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                {{#each coments}}
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <h5>{{userName}}</h5>
+                                    </div>
+                                    <div class="col-3">
+                                        <p class="text-end">{{date}}</p>
+                                    </div>
+                                </div>
+                                <div>{{text}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    {{/each}}
+</div>
