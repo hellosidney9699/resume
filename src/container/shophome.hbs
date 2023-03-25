@@ -52,19 +52,7 @@
         <hr class="my-5">
 
         <section>
-            {{#with subscribe}}
-            <div class="alert bg-dark text-light row">
-                <div class="col-6">
-                    <h2 class="card-title pb-3">{{header}}</h2>
-                    <p class="card-text ">{{description}}</p>
-                </div>
-                <div class="col-6 text-end">
-                    {{#each buttons}}
-                    <a rel="{{type}}" href=" {{link}}" class="btn btn-primary me-1 mt-4">{{text}}</a>
-                    {{/each}}
-                </div>
-            </div>
-            {{/with}}
+            {{> shopsubscribe}}
         </section>
 
         <hr class="my-5">
