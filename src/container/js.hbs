@@ -1,29 +1,29 @@
-<div style="margin-left: 20px;">
-    <div>
+<div>
+    <div class="m-5">
         <h1>{{name}}</h1>
     </div>
-    <hr>
-    <div>
+    <hr class="mx-5">
+    <div class="mx-5">
         <p>
             {{description}}
         </p>
     </div>
-    <div>
+    <div class="mx-5">
         {{#with history}}
         <p>It was founded in <em>{{year}}</em> by <em>{{founder}}.</em></p>
         {{/with}}
     </div>
-    <hr>
+    <hr class="mx-5">
     <br>
     <div>
         {{> card text="Types" data=types }}
     </div>
     <br>
-    <hr>
-    <div style="margin-left: 20px;">
+    <hr class="mx-5">
+    <div>
         {{#with syntax}}
         <div>
-            <h3>JavaScript syntax</h3>
+            <h3 class="mx-5">JavaScript syntax</h3>
         </div>
         {{> accordion-item text="Variables" data=variables }}
         {{> accordion-item text="Functions" data=functions }}
@@ -33,27 +33,27 @@
         {{/with}}
     </div>
     <br>
-    <hr>
+    <hr class="mx-5">
     <br>
-    <div style="margin-left: 20px;">
+    <div>
         {{> card text="JavaScript features" data=features }}
     </div>
     <br>
-    <hr>
+    <hr class="mx-5">
     <br>
-    <div style="margin-left: 20px;">
+    <div>
         {{> card text="Libraries" data=libraries }}
     </div>
     <br>
-    <hr>
+    <hr class="mx-5">
     <br>
-    <div style="margin-left: 20px;">
+    <div>
         {{> card text="Tools" data=tools }}
     </div>
     <br>
-    <hr>
+    <hr class="mt-5 mx-5">
     <br>
-    <div style="margin-left: 20px;">
+    <div class="mx-5 mt-3">
         <h3>Community</h3>
         {{#each community}}
         <ul class="list-group">

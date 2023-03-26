@@ -1,59 +1,55 @@
+{{#with newsBlock}}
+{{> shoppost}}
+{{/with}}
+
+<hr class="my-5">
+
+{{#with goodsBlock}}
 <div>
-    <div class="m-5">
+    <ul class="nav nav-tabs">
+        {{#each tabs}}
+        <li class="nav-item">
+            {{#if isActive}}
+            <a class="nav-link active" href="#">{{text}}</a>
+            {{/if}}
+            {{#if isDisabled}}
+            <a class="nav-link disabled" href="#">{{text}}</a>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
 
-        {{#with newsBlock}}
-        {{> shoppost}}
-        {{/with}}
+{{> shopcard}}
 
-        <hr class="my-5">
-
-        {{#with goodsBlock}}
-        <div>
-            <ul class="nav nav-tabs">
-                {{#each tabs}}
-                <li class="nav-item">
-                    {{#if isActive}}
-                    <a class="nav-link active" href="#">{{text}}</a>
-                    {{/if}}
-                    {{#if isDisabled}}
-                    <a class="nav-link disabled" href="#">{{text}}</a>
-                    {{/if}}
-                </li>
-                {{/each}}
-            </ul>
-        </div>
-
-        {{> shopcard}}
-
-        <div class="col-12">
-            <div class="row">
-                {{#each cards}}
-                <div class="col-4 mt-4 g-2">
-                    <div class="card">
-                        <img src="{{image}}" class="card-img-top" alt="img">
-                        <div class="card-body">
-                            <h6 class="card-title">{{title}}
-                                {{#if isHot}}
-                                <div class="badge rounded-pill text-bg-warning text-light text-uppercase mt-1">Hot</div>
-                                {{/if}}
-                                {{#if idNew}}
-                                <div class="badge rounded-pill text-bg-primary mt-1">Нове</div>
-                                {{/if}}
-                            </h6>
-                            <p class="card-text">{{description}}</p>
-                        </div>
-                    </div>
+<div class="col-12">
+    <div class="row">
+        {{#each cards}}
+        <div class="col-4 mt-4 g-2">
+            <div class="card">
+                <img src="{{image}}" class="card-img-top" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <div class="badge rounded-pill text-bg-warning text-light text-uppercase mt-1">Hot</div>
+                        {{/if}}
+                        {{#if idNew}}
+                        <div class="badge rounded-pill text-bg-primary mt-1">Нове</div>
+                        {{/if}}
+                    </h6>
+                    <p class="card-text">{{description}}</p>
                 </div>
-                {{/each}}
             </div>
         </div>
-        {{/with}}
-
-        <hr class="my-5">
-
-        <section>
-            {{> shopsubscribe}}
-        </section>
-
-        <hr class="my-5">
+        {{/each}}
     </div>
+</div>
+{{/with}}
+
+<hr class="my-5">
+
+<section>
+    {{> shopsubscribe}}
+</section>
+
+<hr class="my-5">
